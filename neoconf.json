@@ -1,0 +1,13 @@
+{
+  "lspconfig": {
+    "clangd": {
+      "clangd.enable": true,
+      "clangd.arguments": [
+        "--enable-config"
+      ],
+      "clangd.fallbackFlags": [
+        "-std=c++20"
+      ]
+    }
+  }
+}
