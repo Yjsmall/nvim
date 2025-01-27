@@ -4,6 +4,6 @@
 local map = vim.keymap.set
 local unmap = vim.keymap.del
 map("n", ";", ":", { desc = "Cmd" })
-map("n", "<leader>fw", LazyVim.pick("live_grep", { root = false }), { desc = "Grep (cwd)" })
+map("n", "<leader>sf", LazyVim.pick("live_grep", { root = false }), { desc = "Grep (cwd)" })
 
 unmap("n", "<leader>l")

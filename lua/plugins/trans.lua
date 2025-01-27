@@ -11,7 +11,5 @@ return {
     { "mi", "<Cmd>TranslateInput<CR>", desc = "󰊿 Translate From Input" },
   },
   dependencies = { "kkharji/sqlite.lua" },
-  opts = {
-    -- your configuration there
-  },
+  opts = {},
 }

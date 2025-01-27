@@ -19,10 +19,10 @@ local function run_file()
 
   if filetype == "c" then
     -- For C files, use clang with c99 standard
-    vim.cmd("!clang -std=c99 " .. flags .. " -o " .. basename .. " " .. filename .. " && ." .. basename)
+    vim.cmd("!clang -std=c99 " .. flags .. " -o " .. basename .. " " .. filename .. " && ./" .. basename)
   elseif filetype == "cpp" then
     -- For C++ files, use clang++ with c++20 standard
-    vim.cmd("!clang++ -std=c++20 " .. flags .. " -o " .. basename .. " " .. filename .. " && ." .. basename)
+    vim.cmd("!clang++ -std=c++23 " .. flags .. " -o " .. basename .. " " .. filename .. " && ./" .. basename)
   elseif filetype == "python" then
     -- For Python files, use uv
     vim.cmd("!uv run " .. filename)
