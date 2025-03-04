@@ -8,6 +8,22 @@ return {
           "clangd",
           "--enable-config",
         },
+        on_attach = function(client, bufnr)
+          local filetype = vim.bo[bufnr].filetype
+          local flags = {}
+          
+          if filetype == "c" then
+            flags = { "--std=c11" }
+          elseif filetype == "cpp" then
+            flags = { "--std=c++20" }
+          end
+          
+          client.config.settings.clangd = {
+            fallbackFlags = flags,
+            flags = flags
+          }
+          client.notify("workspace/didChangeConfiguration", { settings = client.config.settings })
+        end,
       },
     },
     setup = {
